@@ -35,7 +35,6 @@ class Agg(gokart.TaskOnKart):
         self.dump(str(res))
 
 
-
 def run_pipeline():
     gokart.build(Agg())
 
