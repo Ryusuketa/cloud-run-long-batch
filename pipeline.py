@@ -26,7 +26,7 @@ class Agg(gokart.TaskOnKart):
         return self.make_target(f'gs://{os.environ["GCS_BUCKET_NAME"]}/all_results.txt', use_unique_id=False)
 
     def requires(self):
-        return [RunTaskWithWait(wait_time=10, output_name=f'{i}') for i in range(27)]
+        return [RunTaskWithWait(wait_time=100, output_name=f'{i}') for i in range(27)]
  
     def run(self):
         res = self.load()
