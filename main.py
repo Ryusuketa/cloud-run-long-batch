@@ -5,8 +5,7 @@ app = FastAPI()
 
 
 @app.get("/")
+@app.post("/")
 async def root():
-    import os
-    print(os.environ)
     run_pipeline()
     return {'Message': 'finished'}
