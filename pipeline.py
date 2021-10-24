@@ -8,7 +8,6 @@ class RunTaskWithWait(gokart.TaskOnKart):
     workspace_directory = '' 
     wait_time: int = luigi.IntParameter()
     output_name: str = luigi.Parameter()
-    rerun = True
 
     def output(self):
         return self.make_target(f'gs://{os.environ["GCS_BUCKET_NAME"]}/{self.output_name}.txt', use_unique_id=False)
@@ -22,7 +21,6 @@ class RunTaskWithWait(gokart.TaskOnKart):
 
 class Agg(gokart.TaskOnKart):
     workspace_directory = '' 
-    rerun = True
 
     def output(self):
         return self.make_target(f'gs://{os.environ["GCS_BUCKET_NAME"]}/all_results.txt', use_unique_id=False)
